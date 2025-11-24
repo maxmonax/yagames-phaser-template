@@ -1,0 +1,39 @@
+{
+    "compilerOptions": {
+        "target": "ES5",
+        "module": "ES6",
+        "lib": [
+            "DOM",
+            "ES5",
+            "ES6",
+            "ES2015",
+            "ES2016",
+            "ES2017"
+        ],
+        "moduleResolution": "Node",
+        "allowSyntheticDefaultImports": true,
+        "esModuleInterop": true,
+        "sourceMap": true,
+        "outDir": "build",
+        "baseUrl": ".",
+        "paths": {
+            "@/*": [
+                "src/*"
+            ],
+        },
+        // "emitDecoratorMetadata": true,
+        // "experimentalDecorators": true
+    },
+    "include": [
+        "src/**/*.ts",
+        "src/**/*.d.ts",
+        "src/**/*.tsx",
+        "src/**/*.js"
+    ],
+    "exclude": [
+        "node_modules",
+        "public",
+        "build",
+        "dist"
+    ]
+}

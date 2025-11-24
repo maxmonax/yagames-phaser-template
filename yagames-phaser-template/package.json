@@ -1,0 +1,40 @@
+{
+    "name": "neon-breaker",
+    "version": "1.0.0",
+    "description": "",
+    "main": "src/game/game.js",
+    "scripts": {
+        "dev": "webpack serve --config configs/webpack.dev.js",
+        "dev:open": "webpack serve --config configs/webpack.dev.js --open",
+        "build:prod": "webpack --config configs/webpack.prod.js --progress"
+    },
+    "author": "",
+    "license": "ISC",
+    "devDependencies": {
+        "@types/dat.gui": "^0.7.10",
+        "@types/stats": "^0.16.30",
+        "@types/ua-parser-js": "^0.7.36",
+        "clean-webpack-plugin": "^4.0.0",
+        "copy-webpack-plugin": "^11.0.0",
+        "css-loader": "^6.8.1",
+        "css-minimizer-webpack-plugin": "^5.0.1",
+        "file-loader": "^6.2.0",
+        "html-webpack-plugin": "^5.5.3",
+        "mini-css-extract-plugin": "^2.7.6",
+        "node-sass": "^9.0.0",
+        "sass-loader": "^13.3.2",
+        "style-loader": "^3.3.3",
+        "ts-loader": "^9.4.4",
+        "tsconfig-paths-webpack-plugin": "^4.1.0",
+        "webpack": "^5.88.2",
+        "webpack-cli": "^5.1.4",
+        "webpack-dev-server": "^4.15.1",
+        "webpack-merge": "^5.9.0"
+    },
+    "dependencies": {
+        "dat.gui": "^0.7.9",
+        "phaser": "^3.90.0",
+        "stats-js": "^1.0.1",
+        "ua-parser-js": "^1.0.35"
+    }
+}
