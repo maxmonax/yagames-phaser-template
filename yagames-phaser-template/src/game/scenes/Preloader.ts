@@ -1,4 +1,3 @@
-import { Params } from "@/data/Params";
 import { PreloaderBar } from "../gui/preloader/PreloaderBar";
 import { Config } from "@/data/Config";
 import { YaGamesApi } from "@/api/YaGamesApi";

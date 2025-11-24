@@ -1,9 +1,10 @@
 import { LogMng } from "@/utils/LogMng";
+import { FeedbackError, SDK } from "ysdk";
 
 export class YaGamesApi {
 
     private static instance: YaGamesApi = null;
-    private _ysdk: any;
+    private _sdk: SDK;
 
     private constructor() { }
 
@@ -16,7 +17,7 @@ export class YaGamesApi {
 
     async init() {
         try {
-            this._ysdk = await YaGames.init();
+            this._sdk = await YaGames.init();
             LogMng.debug('Yandex SDK initialized');
             return await Promise.resolve(true);
         } catch (error) {
@@ -27,19 +28,19 @@ export class YaGamesApi {
     }
 
     gameReady() {
-        this._ysdk?.features.LoadingAPI?.ready();
+        this._sdk?.features.LoadingAPI?.ready();
     }
 
-    async canReview(): Promise<{ value: boolean, reason: string }> {
-        return this._ysdk.feedback.canReview();
+    async canReview(): Promise<{ value: boolean, reason?: FeedbackError }> {
+        return this._sdk.feedback.canReview();
     }
 
     async requestReview(): Promise<{ feedbackSent: any }> {
-        return this._ysdk.feedback.requestReview();
+        return this._sdk.feedback.requestReview();
     }
 
-    showFullscreenAdv(onOpen?: Function, onCLose?: Function, onError?: Function, onOffline?: Function) {
-        this._ysdk.adv.showFullscreenAdv({
+    showFullscreenAdv(onOpen?, onCLose?: (wasShown: boolean) => void, onError?, onOffline?) {
+        this._sdk.adv.showFullscreenAdv({
             callbacks: {
                 onOpen: onOpen,
                 onClose: onCLose,
@@ -49,8 +50,8 @@ export class YaGamesApi {
         })
     }
 
-    showRewarded(onOpen?: Function, onRewarded?: Function, onCLose?: Function, onError?: Function) {
-        this._ysdk.adv.showRewardedVideo({
+    showRewarded(onOpen?, onRewarded?, onCLose?, onError?) {
+        this._sdk.adv.showRewardedVideo({
             callbacks: {
                 onOpen: onOpen,
                 onRewarded: onRewarded,
