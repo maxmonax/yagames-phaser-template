@@ -7,6 +7,7 @@ import MenuScene from "./game/scenes/MenuScene";
 import GameScene from "./game/scenes/GameScene";
 import Preloader from "./game/scenes/Preloader";
 import Boot from "./game/scenes/Boot";
+import { StatsPlugin } from "./plugins/StatsPlugin";
 
 let isLandscape = true;
 
@@ -25,6 +26,12 @@ function startGame(aParent: HTMLElement) {
             height: Config.GH
         },
         scene: [Boot, Preloader, MenuScene, GameScene],
+        plugins: {
+            scene: [
+                { key: 'StatsPlugin', plugin: StatsPlugin, mapping: 'stats' }
+            ]
+        }
+
     });
     
 }

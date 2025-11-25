@@ -1,10 +1,8 @@
-import { Params } from "@/data/Params";
 import { SceneName } from "./Scenes";
-import { YaGamesApi } from "@/api/YaGamesApi";
-import { Config } from "@/data/Config";
 import { LogMng } from "@/utils/LogMng";
 import { GameData } from "@/data/GameData";
 import * as MyUtils from '@/utils/MyUtils';
+import { Params } from "@/data/Params";
 
 enum Texts {
     Title = 'Loading complete',
@@ -34,9 +32,7 @@ export default class Boot extends Phaser.Scene {
         if (!Params.isDebugMode) LogMng.setMode(LogMng.MODE_RELEASE);
         LogMng.system('Log mode: ' + LogMng.getMode());
 
-        if (!Params.isDebugMode) {
-            console.clear();
-        }
+        if (!Params.isDebugMode) console.clear();
 
         this.readGETParams();
     }
