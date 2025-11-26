@@ -6,7 +6,9 @@
     "scripts": {
         "dev": "webpack serve --config configs/webpack.dev.js",
         "dev:open": "webpack serve --config configs/webpack.dev.js --open",
-        "build:prod": "webpack --config configs/webpack.prod.js --progress"
+        "build:prod": "webpack --config configs/webpack.prod.js --progress",
+        "archive": "node scripts/archive.js",
+        "build:archive": "npm run build:prod && npm run archive"
     },
     "author": "",
     "license": "ISC",
@@ -14,6 +16,7 @@
         "@types/dat.gui": "^0.7.10",
         "@types/stats": "^0.16.30",
         "@types/ua-parser-js": "^0.7.36",
+        "archiver": "^7.0.1",
         "clean-webpack-plugin": "^4.0.0",
         "copy-webpack-plugin": "^11.0.0",
         "css-loader": "^6.8.1",
